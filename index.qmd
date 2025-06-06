@@ -1,5 +1,8 @@
 ---
 title: "Big Data Finance"
+
+listing: 
+    contents: posts
 ---
 
 This is a Quarto website.
