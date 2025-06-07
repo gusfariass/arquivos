@@ -2,7 +2,7 @@
 title: "Gustavo Farias – Cientista de Dados & COO"
 format:
   html:
-    css: portfolio.css
+    css: styles/styles.css
     include-in-header: |
       <script>
         document.addEventListener('DOMContentLoaded', () => {
