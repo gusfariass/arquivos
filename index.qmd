@@ -1,125 +1,182 @@
 ---
-title: "Gustavo Farias – Cientista de Dados & COO"
-format:
+title: "Gustavo Farias - Cientista de Dados & COO"
+subtitle: "Reggia Assessoria"
+author: "Gustavo Farias"
+format: 
   html:
+    theme: cosmo
     css: styles/styles.css
-    include-in-header: |
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-          /* Navegação suave */
-          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', e => {
-              e.preventDefault();
-              const target = document.querySelector(anchor.getAttribute('href'));
-              if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-          });
-
-          /* Menu mobile */
-          const menuBtn   = document.getElementById('mobile-menu-button');
-          const menu      = document.getElementById('mobile-menu');
-          const iconOpen  = document.getElementById('mobile-menu-icon');
-          const iconClose = document.getElementById('mobile-close-icon');
-
-          if (menuBtn && menu && iconOpen && iconClose) {
-            menuBtn.addEventListener('click', () => {
-              menu.classList.toggle('open');
-              const opened = menu.classList.contains('open');
-              iconOpen .style.display = opened ? 'none' : 'block';
-              iconClose.style.display = opened ? 'block' : 'none';
-            });
-          }
-
-          /* Destacar seção ativa */
-          const sections = document.querySelectorAll('section[id]');
-          const navLinks = document.querySelectorAll('.nav-link');
-          window.addEventListener('scroll', () => {
-            const pos = window.scrollY + 100;
-            let active = '';
-            sections.forEach(sec => {
-              if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
-                active = sec.id;
-              }
-            });
-            navLinks.forEach(link => {
-              link.classList.toggle('active', link.hash === '#' + active);
-            });
-          });
-        });
-      </script>
+    toc: false
+    page-layout: full
+    include-in-header:
+      text: |
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <style>
+          body { margin: 0; padding: 0; }
+          .quarto-title-block { display: none; }
+        </style>
 ---
 
-<!-- ================== NAV ================== -->
-<nav class="nav">
-  <div class="nav-container">
-    <div class="nav-logo">DataScientist</div>
-
-    <!-- Menu Desktop -->
-    <div class="nav-menu">
-      <a href="#home"        class="nav-link active">Início</a>
-      <a href="#about"       class="nav-link">Sobre</a>
-      <a href="#projects"    class="nav-link">Projetos</a>
-      <a href="#skills"      class="nav-link">Habilidades</a>
-      <a href="#experience"  class="nav-link">Experiência</a>
-      <a href="#contact"     class="nav-link">Contato</a>
-    </div>
-
-    <!-- Botão Menu Mobile -->
-    <button id="mobile-menu-button" class="nav-mobile-button" aria-label="Abrir menu">
-      <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" style="display:block;">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6"  x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-      <svg id="mobile-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-        <line x1="18" y1="6"  x2="6"  y2="18"></line>
-        <line x1="6"  y1="6"  x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Menu Mobile -->
-  <div id="mobile-menu" class="nav-mobile-menu">
-    <a href="#home"        class="nav-mobile-link">Início</a>
-    <a href="#about"       class="nav-mobile-link">Sobre</a>
-    <a href="#projects"    class="nav-mobile-link">Projetos</a>
-    <a href="#skills"      class="nav-mobile-link">Habilidades</a>
-    <a href="#experience"  class="nav-mobile-link">Experiência</a>
-    <a href="#contact"     class="nav-mobile-link">Contato</a>
-  </div>
-</nav>
-
-<!-- ============ (demais seções intactas) ============ -->
-<!-- Hero, About, Projects, Skills, Experience, Contact -->
-<!-- …                                                                                  -->
-<!-- …                                                                                  -->
-<!-- …                                                                                  -->
-
-<!-- ================== FOOTER ================== -->
-<footer class="footer">
-  <div class="container footer-content">
-    <div class="footer-logo">DataScientist</div>
-    <p class="footer-tagline">Transformando dados em insights valiosos</p>
-
-    <div class="footer-social">
-      <a href="#" class="footer-social-link" aria-label="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5
-                   .08-1.25-.27-2.48-1-3.5 .28-1.15 .28-2.35 0-3.5 0 0-1 0-3 1.5
-                   -2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5
-                   A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05
-                   -.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-          <path d="M9 18c-4.5 2-5-2-7-2"></path>
-        </svg>
-      </a>
-      <!-- repita para LinkedIn / E-mail ou remova -->
-    </div>
-  </div>
-</footer>
+```{=html}
+&lt;!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Farias - Cientista de Dados & COO</title>
+    <style>
+        /* CSS Inline para Quarto */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-purple: #9333ea;
+            --light-blue: #f0f9ff;
+            --light-purple: #faf5ff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--light-blue), var(--light-purple));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-purple));
+            color: white;
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            background: transparent;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--gray-900);
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 1rem;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-purple);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { font-size: 1.2rem; }
+            .section { padding: 3rem 1rem; }
+            .section h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    &lt;!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Gustavo Farias</h1>
+            <p>Cientista de Dados e COO da Reggia Assessoria<br>
+            Transformando dados em insights estratégicos</p>
+            <div>
+                <a href="#sobre" class="btn btn-primary">Conheça meu trabalho</a>
+                <a href="#contato" class="btn btn-outline">Entre em contato</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
