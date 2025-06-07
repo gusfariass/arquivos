@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Big Data Finance</title>
+<title>Gustavo Farias - Cientista de Dados &amp; COO – Big Data Finance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,66 +68,66 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
+  document.addEventListener('DOMContentLoaded', function() {
+    // Navegação suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-      }
+      });
+    });
+
+    // Menu mobile
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+    const mobileCloseIcon = document.getElementById('mobile-close-icon');
+
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        if (mobileMenu.classList.contains('open')) {
+          mobileMenuIcon.style.display = 'none';
+          mobileCloseIcon.style.display = 'block';
+        } else {
+          mobileMenuIcon.style.display = 'block';
+          mobileCloseIcon.style.display = 'none';
+        }
+      });
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
+
+    // Destacar seção ativa durante o scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  });
 </script>
 
+
 <link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="portfolio.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -176,7 +174,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Big Data Finance</h1>
+<h1 class="title">Gustavo Farias - Cientista de Dados &amp; COO</h1>
 </div>
 
 
@@ -193,18 +191,573 @@ window.Quarto = {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<!-- Navegação -->
+<nav class="nav">
+<div class="nav-container">
+<pre><code>&lt;div class="nav-logo"&gt;DataScientist&lt;/div&gt;
 
+&lt;!-- Menu Desktop --&gt;
+&lt;div class="nav-menu"&gt;
+  &lt;a href="#home" class="nav-link active"&gt;Início&lt;/a&gt;
+  &lt;a href="#about" class="nav-link"&gt;Sobre&lt;/a&gt;
+  &lt;a href="#projects" class="nav-link"&gt;Projetos&lt;/a&gt;
+  &lt;a href="#skills" class="nav-link"&gt;Habilidades&lt;/a&gt;
+  &lt;a href="#experience" class="nav-link"&gt;Experiência&lt;/a&gt;
+  &lt;a href="#contact" class="nav-link"&gt;Contato&lt;/a&gt;
+&lt;/div&gt;
 
+&lt;!-- Botão Menu Mobile --&gt;
+&lt;button id="mobile-menu-button" class="nav-mobile-button"&gt;
+  &lt;svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"&gt;
+    &lt;line x1="3" y1="12" x2="21" y2="12"&gt;&lt;/line&gt;
+    &lt;line x1="3" y1="6" x2="21" y2="6"&gt;&lt;/line&gt;
+    &lt;line x1="3" y1="18" x2="21" y2="18"&gt;&lt;/line&gt;
+  &lt;/svg&gt;
+  &lt;svg id="mobile-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"&gt;
+    &lt;line x1="18" y1="6" x2="6" y2="18"&gt;&lt;/line&gt;
+    &lt;line x1="6" y1="6" x2="18" y2="18"&gt;&lt;/line&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+</div>
+<!-- Menu Mobile -->
+<div id="mobile-menu" class="nav-mobile-menu">
+<pre><code>&lt;a href="#home" class="nav-mobile-link"&gt;Início&lt;/a&gt;
+&lt;a href="#about" class="nav-mobile-link"&gt;Sobre&lt;/a&gt;
+&lt;a href="#projects" class="nav-mobile-link"&gt;Projetos&lt;/a&gt;
+&lt;a href="#skills" class="nav-mobile-link"&gt;Habilidades&lt;/a&gt;
+&lt;a href="#experience" class="nav-mobile-link"&gt;Experiência&lt;/a&gt;
+&lt;a href="#contact" class="nav-mobile-link"&gt;Contato&lt;/a&gt;</code></pre>
+</div>
+</nav>
+<!-- Hero Section -->
+<section id="home" class="hero">
+<div class="container">
+<pre><code>&lt;div class="hero-content"&gt;
+  &lt;div class="hero-avatar"&gt;
+    &lt;svg class="hero-avatar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+      &lt;path d="M3 3v18h18"&gt;&lt;/path&gt;
+      &lt;path d="M18.4 8.64 8.58 18.46"&gt;&lt;/path&gt;
+      &lt;path d="m10.12 8.64 1.53-1.53a2.18 2.18 0 0 1 3.08 0l4.3 4.3a2.18 2.18 0 0 1 0 3.08l-1.53 1.53"&gt;&lt;/path&gt;
+      &lt;path d="M18.4 15.54 8.58 5.72"&gt;&lt;/path&gt;
+      &lt;path d="m16.86 17.07-1.53 1.53a2.18 2.18 0 0 1-3.08 0l-4.3-4.3a2.18 2.18 0 0 1 0-3.08l1.53-1.53"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;h1 class="hero-title"&gt;Gustavo Farias&lt;/h1&gt;
+  &lt;p class="hero-subtitle"&gt;Cientista de Dados e COO da Reggia Assessoria, transformando dados em insights estratégicos&lt;/p&gt;
+  &lt;div class="button-container"&gt;
+    &lt;a href="#projects" class="button-primary"&gt;Ver Projetos&lt;/a&gt;
+    &lt;a href="#contact" class="button-outline"&gt;Entre em Contato&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="social-links"&gt;
+    &lt;a href="#" class="social-link"&gt;
+      &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"&gt;&lt;/path&gt;
+        &lt;path d="M9 18c-4.51 2-5-2-7-2"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="social-link"&gt;
+      &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"&gt;&lt;/path&gt;
+        &lt;rect width="4" height="12" x="2" y="9"&gt;&lt;/rect&gt;
+        &lt;circle cx="4" cy="4" r="2"&gt;&lt;/circle&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="social-link"&gt;
+      &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;rect width="20" height="16" x="2" y="4" rx="2"&gt;&lt;/rect&gt;
+        &lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="scroll-indicator"&gt;
+  &lt;svg class="scroll-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;path d="m6 9 6 6 6-6"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="section section-white">
+<div class="container">
+<pre><code>&lt;div class="section-header"&gt;
+  &lt;h2 class="section-title"&gt;Sobre Mim&lt;/h2&gt;
+  &lt;p class="section-subtitle"&gt;Profissional com mais de 5 anos de experiência em análise de dados e machine learning&lt;/p&gt;
+&lt;/div&gt;
 
+&lt;div class="about-grid"&gt;
+  &lt;div&gt;
+    &lt;div class="about-image"&gt;
+      &lt;svg class="about-image-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"&gt;&lt;/path&gt;
+        &lt;path d="m17.5 8.5 2 2"&gt;&lt;/path&gt;
+        &lt;path d="m19.5 8.5 -2 2"&gt;&lt;/path&gt;
+        &lt;path d="m3 3 18 18"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="about-content"&gt;
+    &lt;p class="about-text"&gt;
+      Sou cientista de dados e COO da Reggia Assessoria, com paixão por descobrir padrões ocultos nos dados e
+      transformá-los em soluções práticas para problemas do mundo real. Combino expertise técnica em análise
+      de dados com visão estratégica de negócios, liderando operações e implementando soluções baseadas em
+      dados.
+    &lt;/p&gt;
+    &lt;p class="about-text"&gt;
+      Especializado em Python, R e SQL, com forte background em estatística e matemática. Tenho experiência em
+      projetos de diversos setores, incluindo e-commerce, finanças e saúde.
+    &lt;/p&gt;
+    &lt;div class="stats-grid"&gt;
+      &lt;div class="stat-card"&gt;
+        &lt;div class="stat-value"&gt;50+&lt;/div&gt;
+        &lt;div class="stat-label"&gt;Projetos&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="stat-card"&gt;
+        &lt;div class="stat-value"&gt;5+&lt;/div&gt;
+        &lt;div class="stat-label"&gt;Anos Exp.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="section section-light">
+<div class="container">
+<pre><code>&lt;div class="section-header"&gt;
+  &lt;h2 class="section-title"&gt;Projetos&lt;/h2&gt;
+  &lt;p class="section-subtitle"&gt;Alguns dos meus projetos mais relevantes em ciência de dados&lt;/p&gt;
+&lt;/div&gt;
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
+&lt;div class="projects-grid"&gt;
+  &lt;!-- Projeto 1 --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-image"&gt;
+      &lt;svg class="card-image-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;path d="M3 3v18h18"&gt;&lt;/path&gt;
+        &lt;path d="m19 9-5 5-4-4-3 3"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="card-title"&gt;Análise Preditiva de Vendas&lt;/h3&gt;
+      &lt;p class="card-description"&gt;Modelo de machine learning para prever vendas usando Random Forest e análise de séries temporais.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="badge"&gt;Python&lt;/span&gt;
+        &lt;span class="badge"&gt;Scikit-learn&lt;/span&gt;
+        &lt;span class="badge"&gt;Pandas&lt;/span&gt;
+        &lt;span class="badge"&gt;Matplotlib&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="card-actions"&gt;
+        &lt;a href="#" class="card-button card-button-outline"&gt;
+          &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"&gt;&lt;/path&gt;
+            &lt;path d="M9 18c-4.51 2-5-2-7-2"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+          Código
+        &lt;/a&gt;
+        &lt;a href="#" class="card-button card-button-primary"&gt;
+          &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"&gt;&lt;/path&gt;
+            &lt;polyline points="15 3 21 3 21 9"&gt;&lt;/polyline&gt;
+            &lt;line x1="10" x2="21" y1="14" y2="3"&gt;&lt;/line&gt;
+          &lt;/svg&gt;
+          Demo
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Projeto 2 --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-image"&gt;
+      &lt;svg class="card-image-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;path d="M3 3v18h18"&gt;&lt;/path&gt;
+        &lt;path d="m19 9-5 5-4-4-3 3"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="card-title"&gt;Dashboard de KPIs Empresariais&lt;/h3&gt;
+      &lt;p class="card-description"&gt;Dashboard interativo para visualização de métricas de negócio em tempo real.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="badge"&gt;R&lt;/span&gt;
+        &lt;span class="badge"&gt;Shiny&lt;/span&gt;
+        &lt;span class="badge"&gt;Plotly&lt;/span&gt;
+        &lt;span class="badge"&gt;SQL&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="card-actions"&gt;
+        &lt;a href="#" class="card-button card-button-outline"&gt;
+          &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"&gt;&lt;/path&gt;
+            &lt;path d="M9 18c-4.51 2-5-2-7-2"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+          Código
+        &lt;/a&gt;
+        &lt;a href="#" class="card-button card-button-primary"&gt;
+          &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"&gt;&lt;/path&gt;
+            &lt;polyline points="15 3 21 3 21 9"&gt;&lt;/polyline&gt;
+            &lt;line x1="10" x2="21" y1="14" y2="3"&gt;&lt;/line&gt;
+          &lt;/svg&gt;
+          Demo
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Projeto 3 --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-image"&gt;
+      &lt;svg class="card-image-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+        &lt;path d="M3 3v18h18"&gt;&lt;/path&gt;
+        &lt;path d="m19 9-5 5-4-4-3 3"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="card-title"&gt;Segmentação de Clientes&lt;/h3&gt;
+      &lt;p class="card-description"&gt;Análise de clustering para segmentação de clientes usando algoritmos não supervisionados.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="badge"&gt;Python&lt;/span&gt;
+        &lt;span class="badge"&gt;K-means&lt;/span&gt;
+        &lt;span class="badge"&gt;PCA&lt;/span&gt;
+        &lt;span class="badge"&gt;Seaborn&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="card-actions"&gt;
+        &lt;a href="#" class="card-button card-button-outline"&gt;
+          &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"&gt;&lt;/path&gt;
+            &lt;path d="M9 18c-4.51 2-5-2-7-2"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+          Código
+        &lt;/a&gt;
+        &lt;a href="#" class="card-button card-button-primary"&gt;
+          &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"&gt;&lt;/path&gt;
+            &lt;polyline points="15 3 21 3 21 9"&gt;&lt;/polyline&gt;
+            &lt;line x1="10" x2="21" y1="14" y2="3"&gt;&lt;/line&gt;
+          &lt;/svg&gt;
+          Demo
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="section section-white">
+<div class="container">
+<pre><code>&lt;div class="section-header"&gt;
+  &lt;h2 class="section-title"&gt;Habilidades&lt;/h2&gt;
+  &lt;p class="section-subtitle"&gt;Tecnologias e ferramentas que domino&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="skills-grid"&gt;
+  &lt;!-- Linguagens --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="skill-card-title"&gt;
+        &lt;svg class="skill-card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+          &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
+          &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
+        &lt;/svg&gt;
+        Linguagens
+      &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="skill-badge"&gt;Python&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;R&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;SQL&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;JavaScript&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Julia&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Machine Learning --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="skill-card-title"&gt;
+        &lt;svg class="skill-card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+          &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
+          &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
+        &lt;/svg&gt;
+        Machine Learning
+      &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="skill-badge"&gt;Scikit-learn&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;TensorFlow&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;PyTorch&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;XGBoost&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Visualização --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="skill-card-title"&gt;
+        &lt;svg class="skill-card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+          &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
+          &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
+        &lt;/svg&gt;
+        Visualização
+      &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="skill-badge"&gt;Matplotlib&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Seaborn&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Plotly&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Tableau&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Power BI&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Big Data --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="skill-card-title"&gt;
+        &lt;svg class="skill-card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+          &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
+          &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
+        &lt;/svg&gt;
+        Big Data
+      &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="skill-badge"&gt;Apache Spark&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Hadoop&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;MongoDB&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;PostgreSQL&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Cloud --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="skill-card-title"&gt;
+        &lt;svg class="skill-card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+          &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
+          &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
+        &lt;/svg&gt;
+        Cloud
+      &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="skill-badge"&gt;AWS&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Google Cloud&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Azure&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Docker&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Ferramentas --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h3 class="skill-card-title"&gt;
+        &lt;svg class="skill-card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+          &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
+          &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
+        &lt;/svg&gt;
+        Ferramentas
+      &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="badge-container"&gt;
+        &lt;span class="skill-badge"&gt;Jupyter&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Git&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Linux&lt;/span&gt;
+        &lt;span class="skill-badge"&gt;Excel&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</section>
+<!-- Experience Section -->
+<section id="experience" class="section section-light">
+<div class="container">
+<pre><code>&lt;div class="section-header"&gt;
+  &lt;h2 class="section-title"&gt;Experiência&lt;/h2&gt;
+  &lt;p class="section-subtitle"&gt;Minha trajetória profissional&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="experience-timeline"&gt;
+  &lt;!-- Experiência 1 --&gt;
+  &lt;div class="card experience-card"&gt;
+    &lt;div class="experience-header"&gt;
+      &lt;div&gt;
+        &lt;h3 class="experience-title"&gt;COO &amp; Cientista de Dados&lt;/h3&gt;
+        &lt;p class="experience-company"&gt;Reggia Assessoria&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="experience-meta"&gt;
+        &lt;div class="experience-meta-item"&gt;
+          &lt;svg class="experience-meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;rect width="18" height="18" x="3" y="4" rx="2" ry="2"&gt;&lt;/rect&gt;
+            &lt;line x1="16" x2="16" y1="2" y2="6"&gt;&lt;/line&gt;
+            &lt;line x1="8" x2="8" y1="2" y2="6"&gt;&lt;/line&gt;
+            &lt;line x1="3" x2="21" y1="10" y2="10"&gt;&lt;/line&gt;
+          &lt;/svg&gt;
+          2022 - Presente
+        &lt;/div&gt;
+        &lt;div class="experience-meta-item"&gt;
+          &lt;svg class="experience-meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"&gt;&lt;/path&gt;
+            &lt;circle cx="12" cy="10" r="3"&gt;&lt;/circle&gt;
+          &lt;/svg&gt;
+          Brasil
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="experience-description"&gt;
+      Liderança operacional e desenvolvimento de soluções em ciência de dados para otimização de processos e tomada de decisões estratégicas.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Experiência 2 --&gt;
+  &lt;div class="card experience-card"&gt;
+    &lt;div class="experience-header"&gt;
+      &lt;div&gt;
+        &lt;h3 class="experience-title"&gt;Analista de Dados&lt;/h3&gt;
+        &lt;p class="experience-company"&gt;Data Analytics Corp.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="experience-meta"&gt;
+        &lt;div class="experience-meta-item"&gt;
+          &lt;svg class="experience-meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;rect width="18" height="18" x="3" y="4" rx="2" ry="2"&gt;&lt;/rect&gt;
+            &lt;line x1="16" x2="16" y1="2" y2="6"&gt;&lt;/line&gt;
+            &lt;line x1="8" x2="8" y1="2" y2="6"&gt;&lt;/line&gt;
+            &lt;line x1="3" x2="21" y1="10" y2="10"&gt;&lt;/line&gt;
+          &lt;/svg&gt;
+          2020 - 2022
+        &lt;/div&gt;
+        &lt;div class="experience-meta-item"&gt;
+          &lt;svg class="experience-meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"&gt;&lt;/path&gt;
+            &lt;circle cx="12" cy="10" r="3"&gt;&lt;/circle&gt;
+          &lt;/svg&gt;
+          Rio de Janeiro, RJ
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="experience-description"&gt;
+      Criação de dashboards e relatórios automatizados para suporte à tomada de decisões estratégicas.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Experiência 3 --&gt;
+  &lt;div class="card experience-card"&gt;
+    &lt;div class="experience-header"&gt;
+      &lt;div&gt;
+        &lt;h3 class="experience-title"&gt;Estagiário em Data Science&lt;/h3&gt;
+        &lt;p class="experience-company"&gt;StartupTech&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="experience-meta"&gt;
+        &lt;div class="experience-meta-item"&gt;
+          &lt;svg class="experience-meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;rect width="18" height="18" x="3" y="4" rx="2" ry="2"&gt;&lt;/rect&gt;
+            &lt;line x1="16" x2="16" y1="2" y2="6"&gt;&lt;/line&gt;
+            &lt;line x1="8" x2="8" y1="2" y2="6"&gt;&lt;/line&gt;
+            &lt;line x1="3" x2="21" y1="10" y2="10"&gt;&lt;/line&gt;
+          &lt;/svg&gt;
+          2019 - 2020
+        &lt;/div&gt;
+        &lt;div class="experience-meta-item"&gt;
+          &lt;svg class="experience-meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+            &lt;path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"&gt;&lt;/path&gt;
+            &lt;circle cx="12" cy="10" r="3"&gt;&lt;/circle&gt;
+          &lt;/svg&gt;
+          Belo Horizonte, MG
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="experience-description"&gt;
+      Análise exploratória de dados e desenvolvimento de protótipos de modelos de machine learning.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="section section-white">
+<div class="container">
+<pre><code>&lt;div class="section-header"&gt;
+  &lt;h2 class="section-title"&gt;Vamos Conversar&lt;/h2&gt;
+  &lt;p class="section-subtitle"&gt;Interessado em colaborar ou tem alguma pergunta? Entre em contato!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="contact-grid"&gt;
+  &lt;!-- Email --&gt;
+  &lt;div class="card contact-card"&gt;
+    &lt;svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+      &lt;rect width="20" height="16" x="2" y="4" rx="2"&gt;&lt;/rect&gt;
+      &lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;h3 class="contact-title"&gt;Email&lt;/h3&gt;
+    &lt;p class="contact-value"&gt;gustavo.farias@email.com&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- LinkedIn --&gt;
+  &lt;div class="card contact-card"&gt;
+    &lt;svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+      &lt;path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"&gt;&lt;/path&gt;
+      &lt;rect width="4" height="12" x="2" y="9"&gt;&lt;/rect&gt;
+      &lt;circle cx="4" cy="4" r="2"&gt;&lt;/circle&gt;
+    &lt;/svg&gt;
+    &lt;h3 class="contact-title"&gt;LinkedIn&lt;/h3&gt;
+    &lt;p class="contact-value"&gt;linkedin.com/in/gustavofarias&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- GitHub --&gt;
+  &lt;div class="card contact-card"&gt;
+    &lt;svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+      &lt;path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"&gt;&lt;/path&gt;
+      &lt;path d="M9 18c-4.51 2-5-2-7-2"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;h3 class="contact-title"&gt;GitHub&lt;/h3&gt;
+    &lt;p class="contact-value"&gt;github.com/gustavofarias&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="text-center"&gt;
+  &lt;a href="mailto:gustavo.farias@email.com" class="button-primary"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"&gt;
+      &lt;rect width="20" height="16" x="2" y="4" rx="2"&gt;&lt;/rect&gt;
+      &lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    Enviar Email
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<pre><code>&lt;div class="footer-content"&gt;
+  &lt;div class="footer-logo"&gt;DataScientist&lt;/div&gt;
+  &lt;p class="footer-tagline"&gt;Transformando dados em insights valiosos&lt;/p&gt;
+  &lt;div class="footer-social"&gt;
+    &lt;a href="#" class="footer-social-link"&gt;
+      &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;</code></pre>
+
 
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+
+</footer></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
